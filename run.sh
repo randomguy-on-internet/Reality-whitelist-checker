@@ -36,4 +36,5 @@ systemctl status sing-box &&
 curl -Lo /root/run_server.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run_server.sh &&
 curl -Lo /root/server.py https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/server.py &&
 sleep 1 &&
-bash run_server.sh
+bash run_server.sh &&
+echo "run 'screen -ls' to find all detached screen and use 'screen -r sid' to check if its working properly"
