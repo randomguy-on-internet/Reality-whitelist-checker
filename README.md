@@ -1,3 +1,7 @@
+What is this?
+TLDR;This script has been made to checks multiple SNIs to detemine upload speed of each SNI in a reality Server, Makes your life easier!
+
+
 HOW TO USE?
 
 Very Simple.
@@ -24,6 +28,8 @@ python client.py
 ```
 
 ## فارسی
+این اصلا چی هست؟
+شیوه کار این اسکریپت مثل همون اسکنر آی پی تمیزه  کلود فلر هست ولی این sni ها رو تست میکنه و اونایی که آپلود داشته باشن رو میتونید پیدا کنید.
 
 شیوه استفاده راحته، اول سرور رو یه ریبیلد کنید یا اینکه از یه سرور تست استفاده کنید.
 سرور تستون آی پیش تمیز باشه
@@ -64,9 +70,9 @@ https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/
 ```
 python client.py
 ```
-ازتون ای پی سرور رو میپرسه و اسم فایل تکست
-شروع میکنه تست کردن و نتایج رو داخل فایل
+ازتون ای پی سرور رو میپرسه به همراه اسم فایل تکستی که دامنه ها توش هستن
+بعدش شروع میکنه تست کردن و نتایج رو داخل فایل
 ```
 output_results.txt
 ```
-به فرمت csv ذخیره میکنه
+به فرمت csv ذخیره میکنه.
