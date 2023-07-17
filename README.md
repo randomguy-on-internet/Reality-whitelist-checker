@@ -44,7 +44,7 @@ screen -ls
 
 ## سمت کاربر
 
-از اینجا اول رپو رو کلون(دانلود) کنید
+از اینجا اول رپو رو کلون(دانلود) کنید و از حالت فشرده خارجش کنید
 
 ```
 https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/heads/main.zip
@@ -53,3 +53,20 @@ https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/
 پیشنهاد برای درست کردن لیست sni استفاده از این ریپاسیتوری هست
 
 [TLS-Checker](https://github.com/ImanMontajabi/TLS-Checker)
+
+یا اینکه یه فایل تکست درست کنید و هر خط یک دامین بزارید، نمونه:
+[domain.txt](https://github.com/randomguy-on-internet/Reality-whitelist-checker/blob/main/domain.txt)
+
+پیشنیاز بعدی پایتون 3 هست و ماژول requests اگر بلد نیستید چجوری نصب کنید از بهترین دوستتون گوگل کمک بگیرید.
+
+حالا برید داخل فولدر اسکریپت و کامند لاین رو باز کنید و اینو بزنید:
+
+```
+python client.py
+```
+ازتون ای پی سرور رو میپرسه و اسم فایل تکست
+شروع میکنه تست کردن و نتایج رو داخل فایل
+```
+output_results.txt
+```
+به فرمت csv ذخیره میکنه
