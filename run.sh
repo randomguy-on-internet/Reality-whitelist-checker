@@ -6,7 +6,7 @@ curl -Lo /root/dns.sh https://raw.githubusercontent.com/randomguy-on-internet/Re
 bash dns.sh &&
 
 # Installing Python requirements
-apt install pip &&
+apt install pip -y &&
 python3 -m pip install flask requests &&
 
 # Download and extract Sing-Box Segaro Style XD
