@@ -71,7 +71,7 @@ def close_xray():
 if __name__ == "__main__":
     server_ip = input("whats your server ip? ").strip()
     sni_file = input("whats your sni file name, only name not extension (for domain.txt type only domain)? ").strip()
-    domains = read_domains("sni_file")
+    domains = read_domains(sni_file)
     with open("output_results.txt", "w") as f:
         f.write("domain,speed,latency\n")
     for domain in domains:
