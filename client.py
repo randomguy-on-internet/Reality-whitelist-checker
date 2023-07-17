@@ -43,8 +43,8 @@ def run_xray(config):
 
 def upload_speed_test(timeout):
     proxies = dict(
-        http=f"socks5://127.0.0.1:9000",
-        https=f"socks5://127.0.0.1:9000"
+        http=f"socks5://127.0.0.1:6565",
+        https=f"socks5://127.0.0.1:6565"
     )
     n_bytes = 500 * 1000 * 2
     start_time = time.perf_counter()
