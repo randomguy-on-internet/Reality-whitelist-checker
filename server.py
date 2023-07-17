@@ -6,7 +6,7 @@ def change_sni(sni):
     with open("sing-box_config.json", "r") as f:
         data = json.load(f)
     data['inbounds'][0]['tls']['server_name'] = sni
-    data['inbounds'][0]['reality']['handshake']['server'] = sni
+    data['inbounds'][0]['tls']['reality']['handshake']['server'] = sni
     with open("sing-box_config.json", "w") as f:
         json.dump(data, f)
 
