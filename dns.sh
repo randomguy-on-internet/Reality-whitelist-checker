@@ -1,7 +1,7 @@
 apt update -y &&
 apt install resolvconf -y &&
 
-sudo systemctl status resolvconf.service &&
+#sudo systemctl status resolvconf.service &&
 
 sudo systemctl start resolvconf.service &&
 
