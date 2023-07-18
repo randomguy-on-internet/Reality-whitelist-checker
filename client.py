@@ -21,8 +21,7 @@ def send_sni(server_ip, sni):
 def make_new_conf(server_ip, sni):
     with open("client.json", 'r') as file:
         data = json.load(file)
-
-    # Replace the "serverName" field with "TEXT"
+        
     data['outbounds'][0]['settings']['vnext'][0]['address'] = server_ip
     data['outbounds'][0]['streamSettings']['realitySettings']['serverName'] = sni
 
@@ -40,7 +39,7 @@ def run_xray(config):
     command = f'.\\xray.exe -c .\\{config}'
     subprocess.Popen(command, shell=True)
 
-
+# borrowed this from cfscanner :)
 def upload_speed_test(timeout):
     proxies = dict(
         http=f"socks5://127.0.0.1:6565",
