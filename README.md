@@ -42,11 +42,7 @@ python client.py
 ```
 bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run.sh)
 ```
-اگر همه چی درست پیش بره وقتی این دستور رو یزنید باید یه اسکرین یه اسم
- 
- python_server 
- 
- در حال اجرا باشه
+اگر همه چی درست پیش بره وقتی این دستور رو یزنید باید یه اسکرین یه اسم python_server در حال اجرا باشه
 
 ```
 screen -ls
@@ -59,8 +55,8 @@ screen -ls
 ```
 https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/heads/main.zip
 ```
-بعدش یه لیست اس ان ای (دامین) میخواید برای تست گرفتن که میتونید خودتون درست کنید.
-پیشنهاد برای درست کردن لیست sni استفاده از این ریپاسیتوری هست
+بعدش یه لیست SNI (دامین) میخواید برای تست گرفتن که میتونید خودتون درست کنید.
+پیشنهاد برای درست کردن لیست sni استفاده از این ریپازیتوری هست
 
 [TLS-Checker](https://github.com/ImanMontajabi/TLS-Checker)
 
