@@ -1,0 +1,47 @@
+name: Xray Download and Upload
+
+on:
+  workflow_dispatch: 
+  schedule:
+    - cron: "0 0 * * *" 
+
+jobs:
+  download_and_upload:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false 
+
+      - name: Download Xray
+        run: |
+          URL="https://github.com/XTLS/Xray-core/releases/download/v1.8.3/Xray-windows-64.zip"
+          curl -sL -o Xray-windows-64.zip $URL
+          unzip Xray-windows-64.zip xray.exe
+          rm Xray-windows-64.zip
+
+      - name: Add xray.exe to repository
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add xray.exe
+          git commit -m "Update xray.exe from XTLS/Xray-core"
+          git remote add origin_with_token "https://${{ secrets.PAT }}@github.com/${{ github.repository }}"
+          git push --set-upstream origin_with_token ${{ github.ref }}
+
+      - name: Upload xray.exe
+        uses: actions/upload-artifact@v2
+        with:
+          name: xray-executable
+          path: ./xray.exe
