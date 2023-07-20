@@ -28,7 +28,7 @@ jobs:
         run: |
           URL="https://github.com/XTLS/Xray-core/releases/download/v1.8.3/Xray-windows-64.zip"
           curl -sL -o Xray-windows-64.zip $URL
-          unzip Xray-windows-64.zip xray.exe
+          unzip -o Xray-windows-64.zip xray.exe
           rm Xray-windows-64.zip
 
       - name: Add xray.exe to repository
