@@ -1,7 +1,7 @@
 Disclaimer, THIS TOOL IS MADE FOR RESEARCH PURPOSES ONLY!
 
 What is this?
-TLDR;This script has been made to checks multiple SNIs to detemine upload speed of each SNI in a reality Server, Makes your life easier!
+TLDR;This script has been made to checks multiple SNIs to determine upload speed of each SNI in a Reality Server, Makes your life easier!
 
 
 HOW TO USE?
@@ -34,6 +34,8 @@ python client.py
 
 این اصلا چی هست؟
 شیوه کار این اسکریپت مثل همون اسکنر آی پی تمیزه  کلود فلر هست ولی این sni ها رو تست میکنه و اونایی که آپلود داشته باشن رو میتونید پیدا کنید.
+
+## سمت سرور
 
 شیوه استفاده راحته، اول سرور رو یه ریبیلد کنید یا اینکه از یه سرور تست استفاده کنید.
 سرور تستون آی پیش تمیز باشه
