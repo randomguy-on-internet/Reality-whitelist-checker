@@ -38,7 +38,7 @@ jobs:
           git add xray.exe
           git commit -m "Update xray.exe from XTLS/Xray-core"
           git remote add origin_with_token "https://${{ secrets.PAT }}@github.com/${{ github.repository }}"
-          git push --set-upstream origin_with_token ${{ github.ref }}
+          git push --set-upstream origin_with_token ${{ github.ref }} --force
 
       - name: Upload xray.exe
         uses: actions/upload-artifact@v2
