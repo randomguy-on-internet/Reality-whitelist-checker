@@ -40,7 +40,7 @@ python client.py
 شیوه استفاده راحته، اول سرور رو یه ریبیلد کنید یا اینکه از یه سرور تست استفاده کنید.
 سرور تستون آی پیش تمیز باشه
 
-بعدش داخل سرور دستور زیر رو بزنید، سینگ باکس رو به همراه تغییر دی ان اس سرور و  فایل های مورد نظر نصب میکنه
+بعدش داخل سرور دستور زیر رو بزنید، سینگ باکس رو به همراه تغییر دی ان اس سرور و فایل های مورد نظر نصب میکنه
 ```
 bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run.sh)
 ```
@@ -49,6 +49,19 @@ bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Realit
 ```
 screen -ls
 ```
+![ss](https://gcdnb.pbrd.co/images/OJtqEealEtLr.jpg?o=1)
+
+با دستور زیر هم میتونید به اون اسکرین برید ( تو عکس بالا Session_id همون عدد هست یعنی 2878)
+```
+screen -r Session_id
+```
+
+![ُُss](https://gcdnb.pbrd.co/images/dG6rML3i2S7Q.jpg?o=1)
+
+
+و باید به این صورت سرور فلسک در حال اجرا باشه، حالا با زدن ctrl + a +d میتونید بدون بستن اسکرین ازش خارج بشید.
+
+![ss](https://gcdnb.pbrd.co/images/m3OYO6vcoLkB.jpg?o=1)
 
 ## سمت کاربر
 
