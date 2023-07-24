@@ -32,7 +32,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "1.1.1.1",
+            "address": "193.176.158.153",
             "port": 443,
             "users": [
               {
@@ -51,7 +51,7 @@
         "network": "tcp",
         "security": "reality",
         "realitySettings": {
-          "serverName": "www.speedtest.net",
+          "serverName": "www.update.microsoft",
           "fingerprint": "firefox",
           "show": false,
           "publicKey": "BsKlkKT1sMtetP3YCMZOTo4gbdxMTJeK90tnThpBe3o",
