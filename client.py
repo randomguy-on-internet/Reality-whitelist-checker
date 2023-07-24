@@ -138,6 +138,6 @@ if __name__ == "__main__":
                 f.write(f"{sni}, -, -\n")
             print(
                 f"\n\n*** ERROR *** \n{e}\n\n There is an error in running the program, maybe google it or open an "
-                f"issue with this Error message")
-        time.sleep(0.5)
+                f"issue with this Error message or Ignore it :) ")
+        time.sleep(0.05)
         close_xray()
