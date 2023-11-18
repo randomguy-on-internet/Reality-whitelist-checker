@@ -3,7 +3,7 @@ name: Xray Download and Upload
 on:
   workflow_dispatch: 
   schedule:
-    - cron: "0 0 * * *" 
+    - cron: "0 0 1 * *" 
 
 jobs:
   download_and_upload:
@@ -26,7 +26,7 @@ jobs:
 
       - name: Download Xray
         run: |
-          URL="https://github.com/XTLS/Xray-core/releases/download/v1.8.3/Xray-windows-64.zip"
+          URL="https://github.com/XTLS/Xray-core/releases/download/v1.8.4/Xray-windows-64.zip"
           curl -sL -o Xray-windows-64.zip $URL
           unzip -o Xray-windows-64.zip xray.exe
           rm Xray-windows-64.zip
