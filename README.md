@@ -14,7 +14,7 @@ First we need a **fresh** ubuntu vps, it uses 2 ports, 33333 and 443.
 RUN THIS IN SERVER, TO INSTALL XRAY-Core + Flask:
 
 ```
-bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run.sh)
+bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/run.sh)
 ```
 
 ## Client Side
@@ -45,7 +45,7 @@ python client.py
 
 بعدش داخل سرور دستور زیر رو بزنید، سینگ باکس رو به همراه تغییر دی ان اس سرور و فایل های مورد نظر نصب میکنه
 ```
-bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run.sh)
+bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/run.sh)
 ```
 اگر همه چی درست پیش بره وقتی این دستور رو یزنید باید یه اسکرین یه اسم python_server در حال اجرا باشه
 
@@ -70,7 +70,7 @@ screen -r Session_id
 از اینجا اول رپو رو کلون(دانلود) کنید و از حالت فشرده خارجش کنید
 
 ```
-https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/heads/main.zip
+https://github.com/randomguy-on-internet/Reality-whitelist-checker/archive/refs/heads/xray.zip
 ```
 بعدش یه لیست SNI (دامین) میخواید برای تست گرفتن که میتونید خودتون درست کنید.
 پیشنهاد برای درست کردن لیست sni استفاده از این ریپازیتوری هست
