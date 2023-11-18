@@ -51,7 +51,7 @@ def run_xray(config):
 
 # borrowed this from cfscanner :)
 # u_size is upload file size in MB, default is 1 MB
-def upload_speed_test(timeout, u_size = 2):
+def upload_speed_test(timeout, u_size = 1):
     proxies = dict(
         http=f"socks5://127.0.0.1:6565",
         https=f"socks5://127.0.0.1:6565"
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     sni_file = input(
         f"whats your sni file name, only name not extension (for domain.txt type only domain)?\nfile name: "
         f"").strip()
-    sni_file = "domain"
+    
     domains = read_domains(sni_file)
     time_out = min_time_out(proxy_port,proxy=bool(proxy_port))
     
