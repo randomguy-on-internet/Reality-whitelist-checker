@@ -10,13 +10,20 @@ def terminate(processname):
     os.system('taskkill /IM "' + processname + '" /F')
 
 
-def send_sni(server_ip, sni):
+def send_sni(server_ip, sni , proxy=false, port="2080"):
     url = f'http://{server_ip}:33333/'  # Replace with the actual IP address of the server
-    response = requests.post(url, data=sni)
+    proxy_url = f'127.0.0.1:{port}'  # Replace with the actual proxy address and port of your nekoray
+
+    proxies = {
+        'http': proxy_url
+    }
+    
+    response = requests.post(url, data=sni, proxies=proxies) if proxy else requests.post(url, data=sni)
+    
     if response.status_code == 200:
         print(f"\n***********\nsent {sni} to server successfully\n***********\n")
     else:
-        print("something doesnt add up, check your internet or the server")
+        print("something doesnt add up, check your internet or the server!\n you can add a proxy to nekoray and try again")
 
 
 def make_new_conf(server_ip, sni):
@@ -44,7 +51,7 @@ def run_xray(config):
 
 # borrowed this from cfscanner :)
 # u_size is upload file size in MB, default is 1 MB
-def upload_speed_test(timeout, u_size = 1):
+def upload_speed_test(timeout, u_size = 2):
     proxies = dict(
         http=f"socks5://127.0.0.1:6565",
         https=f"socks5://127.0.0.1:6565"
@@ -85,14 +92,14 @@ def is_process_running(process_name):
 
 
 def min_time_out():
-    sni = "www.speedtest.net"
+    sni = "www.ghbi.ir"
     if is_process_running('xray.exe'):
         print("close v2rayN app")
         close_xray()
     send_sni(server_ip, sni)
     make_new_conf(server_ip, sni)
     run_xray("client.json")
-    for i in range(1, 30):
+    for i in range(1, 6):
         try:
             upload_speed_test(i, 2)
             print(f"\n********\nYour Timeout is {i} Seconds\n********\n")
@@ -103,6 +110,7 @@ def min_time_out():
         except Exception as e:
             print(e)
             pass
+    return 2
 
 
 if __name__ == "__main__":
@@ -110,15 +118,17 @@ if __name__ == "__main__":
     sni_file = input(
         f"whats your sni file name, only name not extension (for domain.txt type only domain)?\nfile name: "
         f"").strip()
+    sni_file = "domain"
     domains = read_domains(sni_file)
     time_out = min_time_out()
-
+    
+    send_sni(server_ip, ",".join(domains))
+    
     with open("output_results.txt", "w") as f:
-        f.write("domain, upload_speed, latency\n")
+        f.write("domain, upload_speed, latency,.\n")
 
     for domain in domains:
         sni = domain
-        send_sni(server_ip, sni)
         make_new_conf(server_ip, sni)
         if is_process_running('xray.exe'):
             print("close v2rayN app")
