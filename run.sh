@@ -10,31 +10,22 @@ apt install pip -y &&
 python3 -m pip install flask requests &&
 
 # Download and extract Sing-Box Segaro Style XD
-curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.6.5/sing-box-1.6.5-linux-amd64.tar.gz &&
-tar -xzf /root/sb &&
-cp -f /root/sing-box-*/sing-box /root &&
-rm -r /root/sb /root/sing-box-* &&
-chown root:root /root/sing-box &&
-chmod +x /root/sing-box
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta &&
 
 # Download Sing-Box configuration file
-curl -Lo /root/sing-box_config.json https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/reality-singbox.json
+curl -Lo /usr/local/etc/xray/config.json https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/reality-xray.json
 
 # Download Sing-Box service file from Segaro repo
-curl -Lo /etc/systemd/system/sing-box.service https://raw.githubusercontent.com/iSegaro/Sing-Box/main/sing-box.service &&
 systemctl daemon-reload
 
 # Enable and start Sing-Box service
-systemctl enable --now sing-box &&
+systemctl restart --now xray &&
 sleep 0.2 &&
-systemctl status sing-box &&
-sleep 0.2 &&
-systemctl restart --now sing-box &&
-sleep 0.2 &&
-systemctl status sing-box &&
+systemctl status xray &&
 
 curl -Lo /root/run_server.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run_server.sh &&
 curl -Lo /root/server.py https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/server.py &&
+
 sleep 1 &&
 bash run_server.sh &&
 echo "run 'screen -ls' to find all detached screen and use 'screen -r sid' to check if its working properly"
