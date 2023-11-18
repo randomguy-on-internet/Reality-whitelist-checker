@@ -10,7 +10,7 @@ apt install pip -y &&
 python3 -m pip install flask requests &&
 
 # Download and extract Sing-Box Segaro Style XD
-curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.3.0/sing-box-1.3.0-linux-amd64.tar.gz &&
+curl -Lo /root/sb https://github.com/SagerNet/sing-box/releases/download/v1.6.5/sing-box-1.6.5-linux-amd64.tar.gz &&
 tar -xzf /root/sb &&
 cp -f /root/sing-box-*/sing-box /root &&
 rm -r /root/sb /root/sing-box-* &&
