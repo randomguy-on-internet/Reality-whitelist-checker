@@ -11,7 +11,7 @@ First we need a **fresh** ubuntu vps, it uses 2 ports, 33333 and 443.
 
 ## Server Side
 
-RUN THIS IN SERVER, TO INSTALL SING-BOX + Flask:
+RUN THIS IN SERVER, TO INSTALL XRAY-Core + Flask:
 
 ```
 bash <(curl -Lso- https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run.sh)
