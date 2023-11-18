@@ -10,7 +10,7 @@ def terminate(processname):
     os.system('taskkill /IM "' + processname + '" /F')
 
 
-def send_sni(server_ip, sni , proxy=false, port="2080"):
+def send_sni(server_ip, sni , port, proxy=False):
     url = f'http://{server_ip}:33333/'  # Replace with the actual IP address of the server
     proxy_url = f'127.0.0.1:{port}'  # Replace with the actual proxy address and port of your nekoray
 
@@ -91,12 +91,12 @@ def is_process_running(process_name):
         return False
 
 
-def min_time_out():
+def min_time_out(port, proxy=False):
     sni = "www.ghbi.ir"
     if is_process_running('xray.exe'):
         print("close v2rayN app")
         close_xray()
-    send_sni(server_ip, sni)
+    send_sni(server_ip, sni,proxy_port ,bool(proxy_port))
     make_new_conf(server_ip, sni)
     run_xray("client.json")
     for i in range(1, 6):
@@ -115,14 +115,21 @@ def min_time_out():
 
 if __name__ == "__main__":
     server_ip = input("whats your server ip?\n Your IP: ").strip()
+    use_proxy = input("do you want to use proxy to send sni to server? y/n? ").strip()
+    if use_proxy == "y" or use_proxy == "n":
+        pass
+    else:
+        print("only y or n")
+        exit()
+    proxy_port = int(input("proxy port? port:").strip()) if use_proxy == "y" else None
     sni_file = input(
         f"whats your sni file name, only name not extension (for domain.txt type only domain)?\nfile name: "
         f"").strip()
     sni_file = "domain"
     domains = read_domains(sni_file)
-    time_out = min_time_out()
+    time_out = min_time_out(proxy_port,proxy=bool(proxy_port))
     
-    send_sni(server_ip, ",".join(domains))
+    send_sni(server_ip, ",".join(domains),proxy_port,proxy=bool(proxy_port))
     
     with open("output_results.txt", "w") as f:
         f.write("domain, upload_speed, latency,.\n")
