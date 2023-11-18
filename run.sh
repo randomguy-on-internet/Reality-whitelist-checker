@@ -2,7 +2,7 @@
 cd /root
 
 # Changing DNS
-curl -Lo /root/dns.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/dns.sh &&
+curl -Lo /root/dns.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/dns.sh &&
 bash dns.sh &&
 
 # Installing Python requirements
@@ -13,7 +13,7 @@ python3 -m pip install flask requests &&
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install --beta &&
 
 # Download Sing-Box configuration file
-curl -Lo /usr/local/etc/xray/config.json https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/reality-xray.json
+curl -Lo /usr/local/etc/xray/config.json https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/reality-xray.json
 
 # Download Sing-Box service file from Segaro repo
 systemctl daemon-reload
@@ -23,8 +23,8 @@ systemctl restart --now xray &&
 sleep 0.2 &&
 systemctl status xray &&
 
-curl -Lo /root/run_server.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/run_server.sh &&
-curl -Lo /root/server.py https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/main/server.py &&
+curl -Lo /root/run_server.sh https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/run_server.sh &&
+curl -Lo /root/server.py https://raw.githubusercontent.com/randomguy-on-internet/Reality-whitelist-checker/xray/server.py &&
 
 sleep 1 &&
 bash run_server.sh &&
