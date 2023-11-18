@@ -35,13 +35,10 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
+          git pull origin main
           git add xray.exe
           git commit -m "Update xray.exe from XTLS/Xray-core"
-          git remote add origin_with_token "https://${{ secrets.PAT }}@github.com/${{ github.repository }}"
-          git push --set-upstream origin_with_token ${{ github.ref }} --force
-
-      - name: Upload xray.exe
-        uses: actions/upload-artifact@v2
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          name: xray-executable
-          path: ./xray.exe
+          github_token: ${{ secrets.TOKEN }}
