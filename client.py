@@ -91,7 +91,7 @@ def is_process_running(process_name):
         return False
 
 
-def min_time_out(port, proxy=False):
+def min_time_out(proxy_port, proxy=False):
     sni = "www.ghbi.ir"
     if is_process_running('xray.exe'):
         print("close v2rayN app")
